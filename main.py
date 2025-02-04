@@ -10,7 +10,6 @@ OPERATIONS: dict = { # List of possible operations
 	"COT": 5
 }
 
-# Intitialize main menu properties
 main_menu: menus.ChoosingMenu = menus.ChoosingMenu()
 main_menu.title = "Trigonometry Calculator"
 main_menu.options = OPERATIONS
