@@ -1,6 +1,7 @@
 class Menu: # Main menu class inherited by all menus
 	def __init__(self):
 		self.title: str
+		self.name: str
 
 	def display_menu(self):
 		pass
