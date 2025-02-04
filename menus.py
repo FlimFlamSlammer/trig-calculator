@@ -55,8 +55,9 @@ class QueryMenu(Menu): # Menu for entering values
 		return res
 
 class ResultMenu(Menu): # Menu for displaying results
-	result_names: list[str]
-	result: list[any]
+	def __init__(self):
+		self.result_names: list[str]
+		self.result: list[any]
 
 	def display_menu(self) -> None:
 		# Print the title
