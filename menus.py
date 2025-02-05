@@ -9,7 +9,7 @@ class Menu: # Main menu class inherited by all menus
 class ChoosingMenu(Menu): # Menu for choosing options
 	def __init__(self):
 		super()
-		self.options: list[str]
+		self.options: dict
 		self.query: str
 
 	def display_menu(self) -> int:
@@ -21,13 +21,19 @@ class ChoosingMenu(Menu): # Menu for choosing options
 
 		# Query the user
 		res: int
+		max_res: int = len(self.options) - 1
 		while True:
-			res = input(self.query)
-			valid: bool = False
-			# Validate the given response. Break if it's valid
+			try:
+				res = int(input(f"{self.query}[0-{max_res}] "))
+				# Validate the given response. Throw an error if invalid
 
 
-			if (valid): break
+			except: pass
+				# Print an error message
+
+
+			else:
+				break
 
 		# Return the response if it's valid (finished)
 		return res
