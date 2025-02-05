@@ -10,10 +10,14 @@ OPERATIONS: dict = { # List of possible operations
 	"COT": 5
 }
 
+operations_array: list[str] = [""] * len(OPERATIONS)
+for k, v in OPERATIONS:
+	operations_array[v] = k
+
 main_menu: menus.ChoosingMenu = menus.ChoosingMenu()
 main_menu.name = "main"
 main_menu.title = "Trigonometry Calculator"
-main_menu.options = OPERATIONS
+main_menu.options = operations_array
 main_menu.query = "Select an operation: "
 
 operation_menu: menus.QueryMenu = menus.QueryMenu()

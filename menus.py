@@ -9,7 +9,7 @@ class Menu: # Main menu class inherited by all menus
 class ChoosingMenu(Menu): # Menu for choosing options
 	def __init__(self):
 		super()
-		self.options: dict
+		self.options: list[str]
 		self.query: str
 
 	def display_menu(self) -> int:
