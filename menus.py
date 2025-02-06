@@ -9,7 +9,7 @@ class Menu: # Main menu class inherited by all menus
 class ChoosingMenu(Menu): # Menu for choosing options
 	def __init__(self):
 		super()
-		self.options: dict
+		self.options: list[str]
 		self.query: str
 
 	def display_menu(self) -> int:
@@ -17,8 +17,8 @@ class ChoosingMenu(Menu): # Menu for choosing options
 		print(self.title)
 		
 		# Print all the options
-		for k, v in self.options:
-			print(f" [{v}] {k}")
+		for i in range(len(self.options)):
+			print(f" [{i}] {self.options[i]}")
 
 		# Query the user
 		res: int
@@ -73,8 +73,8 @@ class ResultMenu(Menu): # Menu for displaying results
 		
 		# Print all result names and the result itself
 		for i in range(len(self.result_names)):
-			print(f" {self.result_names[i]}: {self.results[i]}")
+			print(f" {self.result_names[i]}{self.results[i]}")
 
 		# Ask the user to press enter
-		input(" Press ENTER to continue... ")
+		input("\n Press ENTER to continue... ")
 		return
