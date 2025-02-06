@@ -58,8 +58,6 @@ def cos(x: float) -> float:
 	return round(result, PRECISION)
 
 def tan(x: float) -> float:
-	if (x + 90) % 180 == 0:
-		return None
 	return round(sin(x) / cos(x), PRECISION)
 
 def sin_degrees(x: float) -> float:

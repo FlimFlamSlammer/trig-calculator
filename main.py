@@ -37,7 +37,7 @@ while True:
 			current_menu = operation_menu
 		case "operation":
 			number: float = operation_menu.display_menu()[0]
-			res: list = [0] * 2 # first element float, second element fraction string
+			res: list = [None] * 2 # first element float, second element fraction string
 			
 			try:
 				match OPERATIONS[current_operation]:
@@ -52,7 +52,7 @@ while True:
 					case "SEC":
 						res[0] = 1/math.cos_degrees(number)
 						buf: list = math.cos_degrees_fraction(number)
-						buf = [buf[1], buf[0]]
+						buf[0], buf[1] = buf[1], buf[0]
 						res[1] = str(buf[0]) if buf[1] == 1 else f"{buf[0]}/{buf[1]}"
 					# Add the other operations (tan, csc, cot)
 			except:
