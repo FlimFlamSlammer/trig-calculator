@@ -49,12 +49,25 @@ while True:
 						res[0] = math.cos_degrees(number)
 						buf: list = math.cos_degrees_fraction(number)
 						res[1] = str(buf[0]) if buf[1] == 1 else f"{buf[0]}/{buf[1]}"
+					case "TAN":
+						res[0] = math.tan_degrees(number)
+						buf: list = math.tan_degrees_fraction(number)
+						res[1] = str(buf[0]) if buf[1] == 1 else f"{buf[0]}/{buf[1]}"
 					case "SEC":
 						res[0] = 1/math.cos_degrees(number)
 						buf: list = math.cos_degrees_fraction(number)
 						buf[0], buf[1] = buf[1], buf[0]
 						res[1] = str(buf[0]) if buf[1] == 1 else f"{buf[0]}/{buf[1]}"
-					# Add the other operations (tan, csc, cot)
+					case "CSC":
+						res[0] = 1/math.sin_degrees(number)
+						buf: list = math.sin_degrees_fraction(number)
+						buf[0], buf[1] = buf[1], buf[0]
+						res[1] = str(buf[0]) if buf[1] == 1 else f"{buf[0]}/{buf[1]}"
+					case "COT":
+						res[0] = 1/math.tan_degrees(number)
+						buf: list = math.tan_degrees_fraction(number)
+						buf[0], buf[1] = buf[1], buf[0]
+						res[1] = str(buf[0]) if buf[1] == 1 else f"{buf[0]}/{buf[1]}"
 			except:
 				res = ["undefined", "undefined"]
 			result_menu.results = res
